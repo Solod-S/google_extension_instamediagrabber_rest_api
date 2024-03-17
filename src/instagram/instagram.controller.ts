@@ -1,5 +1,18 @@
-import { Controller, Post, Body, Res, HttpStatus } from '@nestjs/common';
-import { ApiTags, ApiResponse, ApiBody, ApiOperation } from '@nestjs/swagger';
+import {
+  Controller,
+  Post,
+  Body,
+  Res,
+  HttpStatus,
+  UseGuards,
+} from '@nestjs/common';
+import {
+  ApiTags,
+  ApiResponse,
+  ApiBody,
+  ApiOperation,
+  ApiSecurity,
+} from '@nestjs/swagger';
 import { videoUrlResponseDto } from './dto/videoUrlResponse.dto';
 import { InstagramService } from './instagram.service';
 import {
@@ -8,12 +21,16 @@ import {
   INSTA_INTERNAL_SERVER_ERROR,
 } from './entities/instagram.entity';
 import { Response } from 'express';
-@Controller('instagram')
+import { AuthGuard } from '@nestjs/passport';
+
 @ApiTags('Instagram')
+@Controller('instagram')
+@ApiSecurity('X-API-KEY', ['X-API-KEY']) // <----- Авторизация через Swagger
 export class InstagramController {
   constructor(private readonly instagramService: InstagramService) {}
 
   @Post('/getvideo')
+  @UseGuards(AuthGuard('api-key')) // <---- Вернет 401 (unauthorized)
   @ApiOperation({ summary: 'Get video download URL' })
   @ApiBody({
     schema: { type: 'object', properties: { url: { type: 'string' } } },

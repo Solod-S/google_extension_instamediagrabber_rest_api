@@ -19,12 +19,20 @@ async function bootstrap() {
   app.use(new CorsMiddleware().use);
 
   const config = new DocumentBuilder()
-    .setTitle('InstaMediaGrabber API')
+    .setTitle('InstaMediaGraber API')
     .setDescription(
       'The API is designed to retrieve links for downloading Instagram photos and videos.',
     )
     .setVersion(packageJson.version)
-    .addTag('Wellcome')
+    .addApiKey(
+      {
+        type: 'apiKey',
+        name: 'X-API-KEY',
+        in: 'header',
+        description: 'Enter your API key',
+      },
+      'X-API-KEY',
+    )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

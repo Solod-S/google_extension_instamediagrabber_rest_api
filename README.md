@@ -1,73 +1,147 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+![Version](https://img.shields.io/badge/Version-0.9-blue.svg?cacheSeconds=2592000)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![runs with nodeJs](https://img.shields.io/badge/Runs%20with%20Node.Js-000.svg?style=flat-square&logo=nodedotjs&labelColor=f3f3f3&logoColor=#3C823B)](https://nodejs.org/ru)
+[![runs with TS](https://img.shields.io/badge/Runs%20with%20Typescript-000.svg?style=flat-square&logo=typescript&labelColor=f3f3f3&logoColor=#3178C6)](https://www.typescriptlang.org/)
+[![runs with NestJS](https://img.shields.io/badge/Runs%20with%20NestJs-000.svg?style=flat-square&logo=nestjs&labelColor=f3f3f3&logoColor=red)](https://nestjs.com/)
+[![runs with swagger](https://img.shields.io/badge/Runs%20with%20Swagger-000.svg?style=flat-square&logo=swagger&labelColor=f3f3f3&logoColor=#85EA2D)](https://swagger.io/)
+[![runs with PassportJs](https://img.shields.io/badge/Runs%20with%20PassportJs-000.svg?style=flat-square&logo=Passport&labelColor=f3f3f3&logoColor=35DF79)](https://www.passportjs.org/)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<!-- [![runs with jest](https://img.shields.io/badge/Runs%20with%20Jest-000.svg?style=flat-square&logo=jest&labelColor=f3f3f3&logoColor=944058)](https://jestjs.io/ru/) -->
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Instagram Media Graber REST API
 
-## Description
+![Instagram Media Graber](/public/pictures/about.jpg)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+**Project Description:**
 
-## Installation
+This project is a small REST API server built with Nest.js. It features a single endpoint allowing users to retrieve links for downloading videos and photo previews from Instagram. Additionally, the API is documented using Swagger, and it implements security measures through the use of an API key for authentication.
 
-```bash
-$ npm install
+![Instagram Media Graber](/media/main.jpg)
+
+**Main Technologies:**
+
+- Nest.js is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It simplifies the development process by offering a comprehensive set of tools and features to handle routing, middleware, and HTTP requests. Nest.js leverages TypeScript to bring strong typing and enhanced developer experience, while also providing architectural patterns such as dependency injection for building maintainable and testable codebases.
+- Passport: Passport is an authentication middleware for Node.js that offers a variety of authentication strategies. In this project, strategies like passport-facebook, passport-github2, passport-google-oauth2, and passport-linkedin-oauth2 are used to enable social media authentication.
+- Swagger-ui-express: Swagger UI Express is used to generate interactive API documentation. It provides a user-friendly interface for developers to understand and test the available API endpoints.
+
+![Instagram Media Graber](/media/rest-api.gif)
+
+## Technologies Used
+
+<!-- ![Instagram Media Graber](/public/pictures/test-min.jpg) -->
+
+    typescript
+    nestJS
+    swagger
+    passport-headerapikey
+    nayan-media-downloader
+
+<!-- ![Instagram Media Graber](/public/pictures/email-min.jpg) -->
+
+## Project structure
+
+```sh
+.
+├── src
+│   ├── authorization
+│   │   ├── api-key.strategy.ts
+│   │   └── authorization.module.ts
+│   ├── instagram
+│   │   ├── dto
+│   |   |   └── videoUrlResponse.dto.ts
+│   │   ├── entities
+│   |   |   └── instagram.entity.ts
+│   │   ├── instagram.controller.spec.ts
+│   │   ├── instagram.controller.ts
+│   │   ├── instagram.module.ts
+│   │   ├── instagram.service.spec.ts
+│   │   └── instagram.service.ts
+│   ├── middleware
+│   |   └── system
+│   |       ├── corsMiddleware.middleware.ts
+│   |       └── logger.middleware.ts
+│   ├── app.controller.spec.ts
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   └── main.ts
+├── test
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── .eslintrc.js
+├── .prettierrc
+├── package.json
+├── package-lock.json
+├── tsconfig.build.json
+├── tsconfig.json
+├── nest-cli.json
+├── .env
+├── .env.example
+└── README.md
+
 ```
 
-## Running the app
+## How to install
+
+### Using Git (recommended)
+
+1.  Clone the project from github. Change "myproject" to your project name.
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/Solod-S/google_extension_instamediagrabber_rest_api ./myproject
 ```
 
-## Test
+### Using manual download ZIP
+
+1.  Download repository
+2.  Uncompress to your desired directory
+
+### Install npm dependencies after installing (Git or manual download)
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+cd myproject
+npm install
 ```
 
-## Support
+### Setting up environments
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1.  You will find a file named `.env.example` on root directory of project.
+2.  Create a new file by copying and pasting the file and then renaming it to just `.env`
+    ```bash
+    cp .env.example .env
+    ```
+3.  The file `.env` is already ignored, so you never commit your credentials.
+4.  Change the values of the file to your environment. Helpful comments added to `.env.example` file to understand the constants.
 
-## Stay in touch
+## How to build your own..
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+1. First install all dependencies with npm or Yarn:
+   ```javascript
+   npm install
+   ```
+   or
+   ```javascript
+   yarn;
+   ```
+2. Exemple of `.env` file. Replace values with yours!!
 
-## License
+   ```javascript
+   PORT = YOUR_PORT;
+   API_KEY = 'api key';
+   ```
 
-Nest is [MIT licensed](LICENSE).
+3. Start the server
+
+   ```javascript
+   npm run start
+   npm run start:dev
+   npm run start:prod
+   ```
+
+4. Enjoy!!
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or improvements, please create a pull request. For major changes, please open an issue first to discuss the changes.
+
+**_NOTE: PLEASE LET ME KNOW IF YOU DISCOVERED ANY BUG OR YOU HAVE ANY SUGGESTIONS_**
