@@ -6,11 +6,9 @@
 [![runs with swagger](https://img.shields.io/badge/Runs%20with%20Swagger-000.svg?style=flat-square&logo=swagger&labelColor=f3f3f3&logoColor=#85EA2D)](https://swagger.io/)
 [![runs with PassportJs](https://img.shields.io/badge/Runs%20with%20PassportJs-000.svg?style=flat-square&logo=Passport&labelColor=f3f3f3&logoColor=35DF79)](https://www.passportjs.org/)
 
-<!-- [![runs with jest](https://img.shields.io/badge/Runs%20with%20Jest-000.svg?style=flat-square&logo=jest&labelColor=f3f3f3&logoColor=944058)](https://jestjs.io/ru/) -->
+-->
 
 # Instagram Media Graber REST API
-
-![Instagram Media Graber](/public/pictures/about.jpg)
 
 **Project Description:**
 
@@ -20,8 +18,9 @@ This project is a small REST API server built with Nest.js. It features a single
 
 **Main Technologies:**
 
-- Nest.js is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It simplifies the development process by offering a comprehensive set of tools and features to handle routing, middleware, and HTTP requests. Nest.js leverages TypeScript to bring strong typing and enhanced developer experience, while also providing architectural patterns such as dependency injection for building maintainable and testable codebases.
-- Passport: Passport is an authentication middleware for Node.js that offers a variety of authentication strategies. In this project, strategies like passport-facebook, passport-github2, passport-google-oauth2, and passport-linkedin-oauth2 are used to enable social media authentication.
+- Nest.js: Nest.js is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It simplifies the development process by offering a comprehensive set of tools and features to handle routing, middleware, and HTTP requests. Nest.js leverages TypeScript to bring strong typing and enhanced developer experience, while also providing architectural patterns such as dependency injection for building maintainable and testable codebases.
+- TypeScript: TypeScript brings strong typing and enhanced developer experience to Nest.js. It helps in building maintainable and testable codebases, offering benefits such as improved code navigation, refactoring support, and type checking during development.
+- Passport-headerapikey: Passport-headerapikey is an authentication middleware for Node.js that enables API key authentication. It provides a simple and secure way to authenticate requests using an API key included in the request headers. In this project, Passport-headerapikey is utilized to enforce security measures by requiring an API key for accessing the REST API endpoints.
 - Swagger-ui-express: Swagger UI Express is used to generate interactive API documentation. It provides a user-friendly interface for developers to understand and test the available API endpoints.
 
 ![Instagram Media Graber](/media/rest-api.gif)
